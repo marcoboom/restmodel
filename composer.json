@@ -11,9 +11,9 @@
     "minimum-stability": "dev",
     "require": {
         "php": ">=7.0",
-        "illuminate/pagination": "5.4",
-        "illuminate/support": "5.4",
-        "illuminate/contracts": "5.4",
+        "illuminate/pagination": "^5.4",
+        "illuminate/support": "^5.4",
+        "illuminate/contracts": "^5.4",
         "guzzlehttp/guzzle": "^6.0"
     },
     "require-dev": {
