@@ -22,7 +22,7 @@ Restmodel\RestmodelServiceProvider::class,
 Publish the config file restmodel.php to your local folder:
 
 ```bash
-php artisan vendor:publish --provider="\ServiceProvider"
+php artisan vendor:publish --provider="Restmodel\RestmodelServiceProvider"
 ```
 
 ## Basic model
