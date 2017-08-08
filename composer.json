@@ -1,0 +1,34 @@
+{
+    "name": "marcoboom/restmodel",
+    "description": "Create a Laravel model from your array and bind an API",
+    "authors": [
+        {
+            "name": "Marco Boom",
+            "email": "info@marcoboom.nl"
+        }
+    ],
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=7.0",
+        "illuminate/pagination": "5.4",
+        "illuminate/support": "5.4",
+        "illuminate/contracts": "5.4",
+        "guzzlehttp/guzzle": "^6.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.1"
+    },
+    "autoload": {
+       "psr-4": {
+           "Restmodel\\": "src/"
+       }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Restmodel\\RestmodelServiceProvider"
+            ]
+         }
+     }
+}
