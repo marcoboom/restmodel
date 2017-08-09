@@ -121,7 +121,9 @@ class Builder
         //  Is the root element defined in the model?
         if ($root && array_get($result, $root)) {
             $result = array_get($result, $root);
-
+        //  Is the root element defined in the model?
+        } elseif ($root && array_get($result, str_singular($root))) {
+            $result = array_get($result, str_singular($root));
         //  Is the root element the snake case version of the namespace?
         } elseif ($ns && isset($result[snake_case($ns)])) {
             $result = $result[snake_case($ns)];
@@ -173,7 +175,12 @@ class Builder
      */
     public function find($id)
     {
-        throw new \Exception('The find method is not yet implemented');
+        $this->id($id);
+        if ($results = $this->get()) {
+            return $results->first();
+        }
+
+        return null;
     }
 
     /**
