@@ -107,7 +107,6 @@ class Builder
         //  Execute the request
         $result = $this->doRequest();
 
-
         //  The response has to be an array,
         //  otherwise return an empty collection
         if (!is_array($result)) {
@@ -119,10 +118,10 @@ class Builder
         $root = $this->model->getRoot();
 
         //  Is the root element defined in the model?
-        if ($root && array_get($result, $root)) {
+        if ($root && array_has($result, $root)) {
             $result = array_get($result, $root);
         //  Is the root element defined in the model?
-        } elseif ($root && array_get($result, str_singular($root))) {
+        } elseif ($root && array_has($result, str_singular($root))) {
             $result = array_get($result, str_singular($root));
         //  Is the root element the snake case version of the namespace?
         } elseif ($ns && isset($result[snake_case($ns)])) {
@@ -135,9 +134,10 @@ class Builder
         }
 
         //  Check again if the result is an array
-        if (!is_array($result)) {
+        if (!$result || !is_array($result)) {
             return new Collection();
         }
+
 
         $return = new Collection();
         foreach ($result as $item) {
