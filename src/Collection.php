@@ -111,6 +111,9 @@ class Collection extends BaseCollection implements Arrayable
     public function map(callable $callback)
     {
         return parent::map($callback);
+        // return $result->contains(function ($item) {
+        //     return ! $item instanceof Restmodel;
+        // }) ? $result->toBase() : $result;
     }
 
 
@@ -275,11 +278,6 @@ class Collection extends BaseCollection implements Arrayable
 
     public function all()
     {
-        $return = [];
-        foreach ($this->items as $item) {
-            $return[] = $item->toArray();
-        }
-
-        return $return;
+        return $this->items;
     }
 }
