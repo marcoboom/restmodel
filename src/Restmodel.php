@@ -164,7 +164,7 @@ class Restmodel implements Arrayable
             }
         }
 
-        return \InvalidArgumentException("Method {$method} does not exists");
+        throw new \InvalidArgumentException("Method {$method} does not exists");
     }
 
     /**
