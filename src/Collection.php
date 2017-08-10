@@ -110,11 +110,7 @@ class Collection extends BaseCollection implements Arrayable
      */
     public function map(callable $callback)
     {
-        $result = parent::map($callback);
-
-        return $result->contains(function ($item) {
-            return ! $item instanceof Model;
-        }) ? $result->toBase() : $result;
+        return parent::map($callback);
     }
 
 
