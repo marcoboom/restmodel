@@ -18,6 +18,16 @@ trait HasApi
     }
 
     /**
+     * Create a new query for this model
+     * @param  array $data
+     * @return Restmodel
+     */
+    public function newQuery()
+    {
+        return new Builder(new static());
+    }
+
+    /**
      * Get the namespace of the API call
      * @return bool|string|null
      */
